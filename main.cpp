@@ -1,6 +1,24 @@
 #include <iostream>
 #include <filesystem>
 
+// Vector containing words to display here:
+std::vector<std::string> test = {"HELLO", "FRIEND"};
+
+// Vector with all colour codes here:
+std::vector<std::string> colour_codes = {};
+
+// Function to take text and change colour:
+void text_colour_change()
+{
+    // Use global vector containing colour codes.
+}
+
+// Select a random text to display on console.
+void select_text()
+{
+
+}
+
 int main()
 {
     std::cout << "=======================================" << "\n";
@@ -9,6 +27,17 @@ int main()
     std::cout << "- Created By: Anthony-T-N." << "\n";
     std::cout << "- Current location of executable: " << std::filesystem::current_path() << "\n";
     std::cout << "=======================================" << "\n\n";
+
+    // STEP 1) Remove instructions.
+    
+    // STEP 2) Display text.
+
+    // STEP 3) Take text, change colour.
+
+    // STEP 4) Display text.
+
+    // STEP 5) Change text.
+
 }
 
 

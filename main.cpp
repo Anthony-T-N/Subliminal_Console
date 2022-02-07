@@ -6,6 +6,7 @@ std::vector<std::string> test = {"HELLO", "FRIEND"};
 
 // Vector with all colour codes here:
 std::vector<std::string> colour_codes = {};
+// Sample to test: "\033[31m", "\033[32m" 
 
 // Function to take text and change colour:
 std::string text_colour_change(std::string para)
@@ -13,6 +14,7 @@ std::string text_colour_change(std::string para)
     // Use global vector containing colour codes.
 
     // TEST
+    std::string build_text = para + "Sample_Text" + "\033[0m";
     std::string word_test = "\033[31mSample_Text123\033[0m";
     return word_test;
 }
@@ -33,9 +35,12 @@ int main()
     std::cout << "=======================================" << "\n\n";
 
     // STEP 1) Remove instructions.
+    system("cls");
     
     // STEP 2) Display text.
     std::cout << text_colour_change("\033[31m") << "\n";
+    
+    select_text();
 
     // STEP 3) Take text, change colour.
 

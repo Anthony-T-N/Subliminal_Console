@@ -5,7 +5,7 @@
 std::vector<std::string> test = {"HELLO", "FRIEND"};
 
 // Vector with all colour codes here:
-std::vector<std::string> colour_codes = {};
+std::vector<std::string> colour_codes = {"\033[31m", "\033[32m", "\033[36m"}; 
 // Sample to test: "\033[31m", "\033[32m" 
 
 // Function to take text and change colour:
@@ -22,7 +22,8 @@ std::string text_colour_change(std::string para)
 // Select a random text to display on console.
 void select_text()
 {
-
+    int text_number = rand() % 3;
+    return test[text_number];
 }
 
 int main()

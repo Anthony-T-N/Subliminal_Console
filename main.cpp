@@ -1,5 +1,6 @@
 #include <iostream>
 #include <filesystem>
+#include <windows.h>
 
 // Vector containing words to display here:
 std::vector<std::string> vector_test = { "HELLO", "FRIEND", "ABC", "123" };
@@ -8,13 +9,16 @@ std::vector<std::string> vector_test = { "HELLO", "FRIEND", "ABC", "123" };
 std::vector<std::string> vector_colour_codes = { "\033[31m", "\033[32m", "\033[36m" };
 // Sample to test: "\033[31m", "\033[32m" 
 
+int generate_rand_number()
+{
+    return rand() % vector_test.size();
+}
+
 // Function to take text and change colour:
 std::string text_colour_change(std::string para)
 {
     // Use global vector containing colour codes.
-
-    // TEST
-    std::string build_text = para + vector_test[rand() % vector_test.size()] + "\033[0m";
+    std::string build_text = para + vector_test[generate_rand_number()] + "\033[0m";
     std::string word_test = "\033[31mSample_Text123\033[0m";
     return build_text;
 }
@@ -22,7 +26,7 @@ std::string text_colour_change(std::string para)
 // Select a random text to display on console.
 std::string select_text()
 {
-    return vector_test[rand() % vector_test.size()];
+    return vector_test[generate_rand_number()];
 }
 
 int main()
@@ -40,11 +44,13 @@ int main()
     // STEP 2) Display text.
 
     // STEP 3) Take text, change colour.
-    std::cout << select_text() << "\n";
-    std::cout << select_text() << "\n";
-    std::cout << select_text() << "\n";
-    std::cout << select_text() << "\n";
-    std::cout << text_colour_change(vector_colour_codes[rand() % vector_test.size()]) << "\n";
+    while (true)
+    {
+        system("cls");
+        std::cout << select_text() << "\n";
+        std::cout << text_colour_change(vector_colour_codes[rand() % vector_colour_codes.size()]) << "\n";
+        Sleep(25);
+    }
 
     // STEP 4) Display text.
 

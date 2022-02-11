@@ -3,11 +3,10 @@
 #include <windows.h>
 
 // Vector containing words to display here:
-std::vector<std::string> vector_test = { "HELLO", "FRIEND", "ABC", "123" };
+std::vector<std::string> vector_test = { "HELLO", "FRIEND", "ABC", "123", "Monarch" };
 
 // Vector with all colour codes here:
-std::vector<std::string> vector_colour_codes = { "\033[31m", "\033[32m", "\033[36m" };
-// Sample to test: "\033[31m", "\033[32m" 
+std::vector<std::string> vector_colour_codes = { "\033[31m", "\033[32m", "\033[33m", "\033[34m", "\033[35m", "\033[36m", "\033[37m" };
 
 int generate_rand_number()
 {
@@ -47,9 +46,9 @@ int main()
     while (true)
     {
         system("cls");
-        std::cout << select_text() << "\n";
+        //std::cout << select_text() << "\n";
         std::cout << text_colour_change(vector_colour_codes[rand() % vector_colour_codes.size()]) << "\n";
-        Sleep(25);
+        Sleep(50);
     }
 
     // STEP 4) Display text.
